@@ -1,5 +1,8 @@
 package com.viasoft.projeto.envioEmail.controllers.exceptions;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class FildMessage {
 
     private String fieldName;

@@ -1,7 +1,12 @@
 package com.viasoft.projeto.envioEmail.controllers.exceptions;
 
-import java.time.Instant;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class StandardError {
 
     private Instant timestamp;
@@ -9,6 +14,8 @@ public class StandardError {
     private String error;
     private String path;
     private String message;
+
+    private List<FildMessage> listError = new ArrayList<>();
 
     public StandardError() {
     }
@@ -59,5 +66,13 @@ public class StandardError {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public List<FildMessage> getListError() {
+        return listError;
+    }
+
+    public void addErro(FildMessage erro) {
+        this.listError.add(erro);
     }
 }

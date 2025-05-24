@@ -1,22 +1,22 @@
 package com.viasoft.projeto.envioEmail.dtos;
 
-import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Size;
 
 public class EmailAwsDTO {
 
-    @Max(value = 45, message = "E-mail destinatário: Max: 45 caracteres")
+    @Size(max = 45, message = "E-mail destinatário: Max: 45 caracteres")
     private String recipient;
 
-    @Max(value = 10, message = "Nome destinatário. Max: 60 caracteres")
+    @Size(max = 60, message = "Nome destinatário. Max: 60 caracteres")
     private String recipientName;
 
-    @Max(value = 45, message = "E-mail remetente. Max: 45 caracteres")
+    @Size(max = 45, message = "E-mail remetente. Max: 45 caracteres")
     private String sender;
 
-    @Max(value = 120, message = "Assunto do e-mail. Max: 120 caracteres")
+    @Size(max = 120, message = "Assunto do e-mail. Max: 120 caracteres")
     private String subject;
 
-    @Max(value = 256, message = "Conteúdo do e-mail. Max: 256 caracteres")
+    @Size(max = 256, message = "Conteúdo do e-mail. Max: 256 caracteres")
     private String content;
 
     public EmailAwsDTO() {
